@@ -57,6 +57,26 @@ void DLIST::add_before(ptrNODE ptr, const Apartment& objApartment)
 	ptr->prev = p;
 }
 
+void DLIST::del_before(ptrNODE& ptr)
+{
+	if (ptr && ptr->prev)
+	{
+		if (ptr->prev == begin)
+			begin = ptr;
+		Delete(ptr->prev);
+	}
+}
+
+void DLIST::del_after(ptrNODE& ptr)
+{
+	if (ptr && ptr->next)
+	{
+		if (ptr->next == end)
+			end = ptr;
+		Delete(ptr->next);
+	}
+}
+
 void DLIST::print()
 {
 	ptrNODE ptr = begin;

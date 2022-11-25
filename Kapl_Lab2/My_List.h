@@ -35,6 +35,8 @@ public:
 	bool empty();
 	void add_before(ptrNODE ptr, const Apartment& stud);
 	void add_after(ptrNODE ptr, const Apartment& stud);
+	void del_before(ptrNODE& ptr);
+	void del_after(ptrNODE& ptr);
 	void print();
 	Apartment& Delete(ptrNODE& ptr);
 	ptrNODE get_begin()

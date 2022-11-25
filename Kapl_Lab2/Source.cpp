@@ -10,12 +10,13 @@ void task(DLIST& DL)
 	std::cin >> targetStreet;
 	std::cout << "Enter house: \n";
 	std::cin >> targetHouse;
-	while (ptr)
+	while (ptr && (ptr->info.getStreet() <= targetStreet ||  ( ptr->info.getStreet() == targetStreet && ptr->info.getHouse() <= targetHouse ) ))
 	{
 		if (ptr->info.getStreet() == targetStreet && ptr->info.getHouse() == targetHouse)
+		{
 			DL.Delete(ptr);
-		else
-			ptr = ptr->next;
+		}
+		else ptr = ptr->next;
 	}
 }
 
